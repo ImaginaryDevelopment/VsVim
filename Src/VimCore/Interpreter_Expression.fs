@@ -513,6 +513,9 @@ and [<RequireQualifiedAccess>] LineCommand =
     /// Go to the previous tab
     | GoToPreviousTab of int option
 
+    //VimGrep
+    | Grep of bool * string * string
+
     /// Get help on VsVim
     | Help
 

@@ -1722,6 +1722,7 @@ type VimInterpreter
         | LineCommand.GoToLastTab -> x.RunGoToLastTab()
         | LineCommand.GoToNextTab count -> x.RunGoToNextTab count
         | LineCommand.GoToPreviousTab count -> x.RunGoToPreviousTab count
+        | LineCommand.Grep (don'tjump, pattern, fileGlob) -> x.RunEcho (Expression.ConstantValue ( VariableValue.String (sprintf "%A" (don'tjump,pattern,fileGlob))))
         | LineCommand.HorizontalSplit (lineRange, fileOptions, commandOptions) -> x.RunSplit _vimHost.SplitViewHorizontally fileOptions commandOptions
         | LineCommand.HostCommand (command, argument) -> x.RunHostCommand command argument
         | LineCommand.Join (lineRange, joinKind) -> x.RunJoin lineRange joinKind
